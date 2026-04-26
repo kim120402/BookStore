@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="card border-0 shadow-sm mx-auto" style="max-width: 500px;">
+    <div class="card-body p-4">
+
+        <h1 class="fw-bold mb-3">Login</h1>
+
+        {% if form.errors %} <!-- show error -->
+            <div class="alert alert-danger">
+                Invalid username or password.
+            </div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

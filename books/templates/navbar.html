@@ -1,0 +1,39 @@
+<!-- navbar for navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+
+        <!-- logo / title -->
+        <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+            Bookstore
+        </a>
+
+        <div class="navbar-nav ms-auto align-items-center">
+
+            <!-- always show home -->
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+
+            <!-- show api routes -->
+            <a class="nav-link" href="{% url 'api_routes' %}">API</a>
+
+            {% if user.is_authenticated %} <!-- check if user logged in -->
+
+                <!-- allow add book only if logged in -->
+                <a class="btn btn-outline-light btn-sm ms-2" href="{% url 'add_book' %}">
+                    Add Book
+                </a>
+
+                <!-- logout form -->
+                <form action="{% url 'logout' %}" method="POST" class="ms-2">
+                    {% csrf_token %}
+                    <button class="btn btn-light btn-sm" type="submit">Logout</button>
+                </form>
+
+            {% else %} <!-- if not logged in -->
+
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+                <a class="btn btn-light btn-sm ms-2" href="{% url 'login' %}">Login</a>
+
+            {% endif %}
+        </div>
+    </div>
+</nav>

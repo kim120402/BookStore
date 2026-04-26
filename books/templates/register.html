@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="card border-0 shadow-sm mx-auto" style="max-width: 500px;">
+    <div class="card-body p-4">
+
+        <h1 class="fw-bold mb-3">Register</h1>
+
+        {% if form.errors %} <!-- show error -->
+            <div class="alert alert-danger">
+                Please fix the errors below.
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="card border-0 shadow-sm mx-auto" style="max-width: 700px;">
+    <div class="card-body p-4">
+
+        <h1 class="fw-bold mb-3">Edit Book</h1>
+
+        {% if form.errors %} <!-- show error -->
+            <div class="alert alert-danger">
+                Please fix the errors below.
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }} <!-- pre filled form -->
+
+            <button type="submit" class="btn btn-warning">Update Book</button>
+            <a href="{% url 'book_detail' book.id %}" class="btn btn-secondary">Cancel</a>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
