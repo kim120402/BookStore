@@ -90,4 +90,18 @@ http://127.0.0.1:8000/
 http://127.0.0.1:8000/admin/
 http://127.0.0.1:8000/api/
 
+## Screenshots
+### Homepage
+![Homepage]<img width="1919" height="995" alt="image" src="https://github.com/user-attachments/assets/d44577c9-7664-4275-be6a-eb72893a7009" />
 
+### Book Detail
+![Book Detail](screenshots/detail.png)
+
+### Add Book
+![Add Book](screenshots/add.png)
+
+### Login
+![Login](screenshots/login.png)
+
+### API Output
+![API](screenshots/api.png)
