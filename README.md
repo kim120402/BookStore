@@ -71,7 +71,7 @@ bookstore/
 ## Setup
 
 
-git clone https://github.com/yourusername/bookstore.git
+git clone https://github.com/kim120402/bookstore.git
 
 cd bookstore
 
@@ -85,6 +85,7 @@ python manage.py createsuperuser
 python manage.py runserver
 
 ---## Usage
+
 http://127.0.0.1:8000/
 http://127.0.0.1:8000/admin/
 http://127.0.0.1:8000/api/
